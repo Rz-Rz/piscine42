@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 18:24:03 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/06 18:29:33 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/14 11:36:36 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ void	ft_ultimate_div_mod(int *a, int *b);
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int	*temp;
+	int	temp;
 
 	temp = *a / *b;
 	*b = *a % *b;

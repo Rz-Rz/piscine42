@@ -6,16 +6,19 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 19:13:17 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/06 19:20:03 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/14 11:44:10 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putstr(char *str);
 
-void    ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-		int	i;
+	int	i;
 
-		while(str[i] != '\0')
-				write(1, &str[i++], 1);
+	i = 0;
+	while (str[i] != '\0')
+		write(1, &str[i++], 1);
 }

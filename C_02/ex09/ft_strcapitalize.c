@@ -6,11 +6,35 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 06:38:33 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/09 06:52:41 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/14 15:15:30 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcapitalize(char *str);
+#include <unistd.h>
+
+char	*ft_strcapitalize(char *src);
+
+void	ft_putstr(char *str)
+{
+	int l;
+
+	l = 0;
+	while (str[l])
+	{
+		l++;
+	}
+	write(1, str, l);
+}
+
+int		main()
+{
+	char c[] = "salut, coMMent tu vAs ? 42mOts quArAnTe-dEux; cinQuante+et+un";
+	ft_putstr("Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un:");
+	ft_putstr(ft_strcapitalize(c));
+	ft_putstr(":");
+	ft_putstr(c);
+}
 
 char	*ft_strcapitalize(char *str)
 {

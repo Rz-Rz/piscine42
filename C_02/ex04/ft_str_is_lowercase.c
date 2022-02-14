@@ -6,11 +6,25 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 21:26:34 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/08 21:33:33 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/14 15:06:36 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_lowercase(char *str);
+/*
+#include <stdio.h>
+int		main()
+{
+	printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",
+			ft_str_is_lowercase("")?"OK":"Fail",
+			ft_str_is_lowercase("abcdefghijklmnopqrstuvwxyz")?"OK":"Fail",
+			!ft_str_is_lowercase("ABCDEFGHIJKLMNOPQRSTUVWXZad")?"OK":"Fail",
+			!ft_str_is_lowercase("0123456789")?"OK":"Fail",
+			!ft_str_is_lowercase(" ")?"OK":"Fail",
+			!ft_str_is_lowercase("\\")?"OK":"Fail",
+			!ft_str_is_lowercase("\n")?"OK":"Fail");
+}
+*/
 
 int	ft_str_is_lowercase(char *str)
 {
