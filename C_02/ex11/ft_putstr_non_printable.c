@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:32:02 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/09 17:44:01 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/15 16:26:59 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	print(int r, char d)
 	}
 }
 
+/*
 void	ft_putstr(char *str)
 {
 	int	l;
@@ -94,3 +95,14 @@ void	ft_putstr(char *str)
 	}
 	write(1, str, l);
 }
+
+int		main()
+{
+	char c[] = "Coucou\ntu vas bien ?";
+	ft_putstr("Coucou\\0atu vas bien ?:");
+	ft_putstr_non_printable(c);
+	char d[] = "Coucou\ftu\bvas\abien ?";
+	ft_putstr("Coucou\ftu\bvas\abien ?");
+	ft_putstr_non_printable(d);
+}
+*/
