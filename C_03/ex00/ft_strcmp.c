@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 18:24:36 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/09 19:35:58 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/17 15:16:02 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,35 @@ int	ft_strcmp(char *s1, char *s2);
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	a1;
-	int	a2;
-
-	i = 0;
-	while (1 == 1)
+	while (*s1 && *s2 == *s1)
 	{
-		if (s1[i] == '\0' && s2[i] == '\0')
-			return (0);
-		a1 = (int)s1[i];
-		a2 = (int)s2[i];
-		if (a1 > a2)
-			return (1);
-		if (a1 < a2)
-			return (-1);
-		i++;
+		s1++;
+		s2++;
 	}
+	return (*s1 - *s2);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	s1[];
+	char	s2[];
+	char	s3[];
+	char	s4[];
+	char	s5[];
+	char	s6[];
+
+    s1[] = "Test1";
+    s2[] = "OK";
+    s3[] = "Same";
+    s4[] = "Size";
+    s5[] = "Shorter";
+    s6[] = "ThanMyself";
+    printf("%d, %d\n", ft_strcmp(s1, s2), strcmp(s1, s2));
+    printf("%d, %d\n", ft_strcmp(s3, s4), strcmp(s3, s4));
+    printf("%d, %d\n", ft_strcmp(s5, s6), strcmp(s5, s6));
+    printf("%d, %d\n", ft_strcmp(s5, s5), strcmp(s5, s5));
+}
+*/
