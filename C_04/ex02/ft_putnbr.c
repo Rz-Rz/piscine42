@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 10:51:57 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/15 10:52:08 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/18 11:35:49 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ void	ft_putnbr(int nb)
 	}
 }
 /*
-int	main(int ac, char **av)
+int	main(void)
 {
-		ft_putnbr(-123121);
+		ft_putnbr(-2147483648);
+		ft_putnbr(-2147483647);
+		ft_putnbr(2147483647);
 }
 */

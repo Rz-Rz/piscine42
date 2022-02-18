@@ -6,20 +6,21 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 12:49:27 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/11 14:50:56 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/17 21:40:23 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_strswap(char **a, char **b)
+void ft_putstr(char *str)
 {
-    char *temp;
+    int i;
 
-    temp = *a;
-    *a = *b;
-    *b = temp;
+    i = 0;
+    while(str[i] || str[i] == ' ')
+    {
+        write(1, &str[i], 1);
 
+    }
 }
-
 int ft_strcmp(char *s1, char *s2)
 {
     (*s1 && *s1 == *s2)
@@ -30,24 +31,30 @@ int ft_strcmp(char *s1, char *s2)
     return (s1 - s2);
 }
 
-void ft_revparams(char *a, int size)
+void ft_revparams(char **av, int ac)
 {
-    int i;
-    int j;
+ int j;
+ int i;
+ int temp;
 
-    i = 1;
-    j = 1;
-    while (i < size)
-    {
-        j = 1 + i;
-        while (j < size)
-        {
-            if (ft_strcmp(a[i], a[j]) > 0)
-                ft_swap(a[i], a[j]);
-            j++;
-        }
-        i++;
-    }
+ i = 1;
+ while (i < ac)
+ {
+     j = i + 1;
+     while (j < ac)
+     {
+         if (0 < (ft_strcmp(*av[i], *av[j])))
+         {
+            temp = *av[i];    
+            *av[i] = av[j];
+            av[j] = temp;
+         }
+            
+        j++;
+     }
+     i++;
+ }
+
 }
 
 void ft_putstr(char *str)
@@ -61,7 +68,7 @@ void ft_putstr(char *str)
     }
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
     int i;
     int j;
@@ -70,9 +77,6 @@ int main(int argc, char *argv[])
     j = 0;
     while (++i < argc)
     {
-        ft_revparams(*argv[++j], argc);
+        ft_revparams(**argv, argc);
     }
-
-    ft_putstr(**argv)
-
 }
