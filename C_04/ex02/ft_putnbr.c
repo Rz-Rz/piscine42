@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 10:51:57 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/18 11:35:49 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/19 14:51:36 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putnbr(int nb)
 			ft_putchar('-');
 		}
 	}
-	if (nb < 9 && nb >= 0)
+	if (nb <= 9 && nb >= 0)
 		ft_putchar(nb + '0');
 	else if (nb > 9)
 	{
@@ -39,11 +39,16 @@ void	ft_putnbr(int nb)
 		ft_putchar((nb % 10) + '0');
 	}
 }
+
 /*
 int	main(void)
 {
 		ft_putnbr(-2147483648);
+        ft_putchar('\n');
 		ft_putnbr(-2147483647);
+        ft_putchar('\n');
 		ft_putnbr(2147483647);
+        ft_putchar('\n');
+		ft_putnbr(9);
 }
 */

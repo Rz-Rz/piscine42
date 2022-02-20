@@ -6,77 +6,76 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 12:49:27 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/17 21:40:23 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/20 15:53:16 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putstr(char *str)
-{
-    int i;
+#include <unistd.h>
 
-    i = 0;
-    while(str[i] || str[i] == ' ')
-    {
-        write(1, &str[i], 1);
-
-    }
-}
-int ft_strcmp(char *s1, char *s2)
+void	ft_putstr(char *str)
 {
-    (*s1 && *s1 == *s2)
-    {
-        s1++;
-        s2++;
-    }
-    return (s1 - s2);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i++], 1);
+	}
 }
 
-void ft_revparams(char **av, int ac)
+int	ft_strcmp(char *s1, char *s2)
 {
- int j;
- int i;
- int temp;
-
- i = 1;
- while (i < ac)
- {
-     j = i + 1;
-     while (j < ac)
-     {
-         if (0 < (ft_strcmp(*av[i], *av[j])))
-         {
-            temp = *av[i];    
-            *av[i] = av[j];
-            av[j] = temp;
-         }
-            
-        j++;
-     }
-     i++;
- }
-
+	while (*s1 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
-void ft_putstr(char *str)
+void	ft_strswap(char **a, char **b)
 {
-    int i;
+	char	*c;
 
-    i = 0;
-    while(str[i] = '\n')
-    {
-        write(1, str[i], 1);
-    }
+	c = *a;
+	*a = *b;
+	*b = c;
 }
 
-int main(int argc, char **argv)
+void	ft_revparams(char **av, int ac)
 {
-    int i;
-    int j;
+	int	j;
+	int	i;
 
-    i = 0;
-    j = 0;
-    while (++i < argc)
-    {
-        ft_revparams(**argv, argc);
-    }
+	i = 1;
+	while (i < ac)
+	{
+		j = i + 1;
+		while (j < ac)
+		{
+			if ((ft_strcmp(av[i], av[j])) > 0)
+			{
+				ft_strswap(&av[i], &av[j]);
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	int	i;
+	int	nl;
+
+	ft_revparams(argv, argc);
+	i = 1;
+	nl = '\n';
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		write(1, &nl, 1);
+		i++;
+	}
+	return (0);
 }

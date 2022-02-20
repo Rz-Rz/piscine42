@@ -6,45 +6,36 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 11:50:47 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/18 11:29:14 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/19 19:41:25 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_isneg(int neg, int nb)
+int	ft_atoi(char *str)
 {
+	int	nb;
+	int	neg;
+
+	nb = 0;
+	neg = 0;
+	while ((*str >= 9 && *str <= 13) || (*str == ' '))
+		str++;
+	while (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			neg++;
+	while (*str >= '0' && *str <= '9')
+		nb = nb * 10 + *str++ - '0';
 	if (neg % 2 != 0)
 		nb *= -1;
 	return (nb);
 }
-
-int	ft_atoi(char *str)
-{
-    int	nb;
-    int	neg;
-
-    nb = 0;
-    neg = 0;
-    while ((*str >= 9 && *str <= 13) || (*str == ' '))
-        str++;
-    while (*str == '-' || *str == '+')
-    {
-        if (*str == '-')
-            neg++;
-        str++;
-    }
-    while (*str >= '0' && *str <= '9')
-        nb = nb * 10 + *str++ - '0';
-    nb = ft_isneg(neg, nb);
-    return (nb);
-}
-
 /*
 int	main(void)
 {
 	printf("42:%d\n", ft_atoi("  \n  42t4457"));
 	printf("-42:%d\n", ft_atoi(" --+-42sfs:f545"));
+	printf("0:%d\n", ft_atoi("q --+-42sfs:f545"));
 	printf("0:%d\n", ft_atoi(" --+- 42sfs:f545"));
 	printf("0:%d\n", ft_atoi("\0 1337"));
 	printf("0:%d\n", ft_atoi("-0"));

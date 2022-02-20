@@ -6,11 +6,12 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 10:17:15 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/18 11:18:26 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/18 14:07:26 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
 void ft_putchar(char s)
 {
@@ -26,7 +27,7 @@ void ft_inter(char *s1, char*s2)
     i = 0;
     while (s1[i])
     {
-        j = 0;
+        j = 0 + i;
         while (s2[j])
         {
            if (s1[i] == s2[j] && tab[(int)s1[i]] == 0) 

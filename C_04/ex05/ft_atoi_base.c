@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 09:47:09 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/17 20:54:10 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/19 19:34:43 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_basewalk(char c, char *base)
 		if (c == base[i])
 			return (i);
 	}
-	return (0);
+	return (-1);
 }
 
 int	ft_isneg(int nb, int neg)
@@ -43,7 +43,7 @@ int	ft_baselen(char *base)
 			return (0);
 		else if (base[i] < 32 && base[i] >= 0)
 			return (0);
-		else if (ft_basewalk(base[i], base + i + 1))
+		else if (ft_basewalk(base[i], base + 1 + i) >= 0)
 			return (0);
 		i++;
 	}
@@ -66,9 +66,7 @@ int	ft_atoi_base(char *str, char *base)
 	while (*str == '-' || *str == '+')
 		if (*str++ == '-')
 			neg++;
-	if ((*str >= 9 && *str <= 13) || (*str == ' '))
-		return (0);
-	while (*str)
+	while (ft_basewalk(*str, base) >= 0)
 	{
 		nb = nb * size + ft_basewalk(*str, base);
 		str++;
@@ -82,6 +80,10 @@ int	ft_atoi_base(char *str, char *base)
 
 int	main(void)
 {
+	printf("-2147483648:%d\n", ft_atoi_base("-80000000", "0123456789abcdef"));
+	printf("-42:%d\n", ft_atoi_base("   --------+-2a", "0123456789abcdef"));
+	printf("2147483647:%d\n", ft_atoi_base("7fffffff", "0123456789abcdef"));
+	printf("-2147483648:%d\n", ft_atoi_base("   -80000000", "0123456789abcdef"));
 	printf("42:%d\n", ft_atoi_base("2a", "0123456789abcdef"));
 	printf("-42:%d\n", ft_atoi_base("   --------+-2a", "0123456789abcdef"));
 	printf("42:%d\n", ft_atoi_base("   -+-2a", "0123456789abcdef"));

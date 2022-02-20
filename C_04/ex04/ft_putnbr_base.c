@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:43:59 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/17 18:06:06 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/19 18:53:10 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	ft_checkbase(char *base)
 	int	i;
 	int	j;
 
-	i = 0;
 	if (ft_strlen(base) <= 1)
 		return (0);
+	i = 0;
 	while (base[i])
 	{
 		j = i + 1;
@@ -54,19 +54,14 @@ int	ft_checkbase(char *base)
 	return (1);
 }
 
-void	ft_print(int nbr, char *base, int bsize)
+void	ft_print(unsigned int nbr, char *base, unsigned int bsize)
 {
-	int	rem;
-
-	rem = 0;
 	if (nbr > bsize - 1)
 	{
 		ft_print(nbr / bsize, base, bsize);
-		rem = nbr % bsize;
-		ft_putchar(base[rem]);
+		nbr %= bsize;
 	}
-	else
-		ft_putchar(base[nbr]);
+	ft_putchar(base[nbr]);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
@@ -79,17 +74,21 @@ void	ft_putnbr_base(int nbr, char *base)
 		if (nbr < 0)
 		{
 			ft_putchar('-');
-			nbr *= -1;
+			ft_print(nbr * -1, base, bsize);
 		}
-		ft_print(nbr, base, bsize);
+		else
+			ft_print(nbr, base, bsize);
 	}
 }
-
 /*
 int	main(void)
 {
-	write(1, "42:", 3);
+	write(1, "2147483647:", 12);
+	ft_putnbr_base(2147483647, "0123456789");
+	write(1, "\n42:", 4);
 	ft_putnbr_base(42, "0123456789");
+	write(1, "\n-2147483648:", 13);
+	ft_putnbr_base(-2147483648, "0123456789");
 	write(1, "\n2a:", 4);
 	ft_putnbr_base(42, "0123456789abcdef");
 	write(1, "\n-2a:", 5);
@@ -102,5 +101,9 @@ int	main(void)
 	ft_putnbr_base(42, "+-0123456789abcdef");
 	write(1, "\n:", 2);
 	ft_putnbr_base(42, "\t0123456789abcdef");
+	write(1, "\n101010:", 8);
+	ft_putnbr_base(42, "01");
+	write(1, "\n10100111001:", 13);
+	ft_putnbr_base(1337, "01");
 }
 */

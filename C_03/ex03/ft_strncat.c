@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 21:31:16 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/17 20:33:03 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/20 17:56:16 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strncat(char *dest, char *src, unsigned int nb);
@@ -16,13 +16,11 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	unsigned int	i;
 	unsigned int	j;
 
-	if (nb == 0)
-		return (dest);
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
+	while (dest[i])
 		i++;
-	while (src[j] != '\0' && j < nb - 1)
+	while (src[j] && j < nb)
 	{
 		dest[i + j] = src[j];
 		j++;
@@ -36,9 +34,9 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 int	main(void)
 {
 
-    char    s1a[10] = "Test1";
+    char    s1a[10] = "";
     char    s2a[] = "OK";
-    char    s1b[10] = "Test1";
+    char    s1b[10] = "";
     char    s2b[] = "OK";
     char    s3a[10] = "Same";
     char    s4a[10] = "Size";
@@ -57,5 +55,15 @@ int	main(void)
 	printf("%s:%s\n", ft_strncat(s5a, s6a, 0), strncat(s5b, s6b, 0));
 	printf("%s\n", strcmp(s5a, s5b) == 0 && strcmp(s6a,
 				s6b) == 0 ? "Success" : "Fail");
+
+    char dest[20] = "123";
+	char src[] = "4567890";
+	unsigned int nb = 0;
+
+	printf("-----\ndest = %s\nsrc = %s\nnb = %d\n", dest, src, nb);
+	ft_strncat(dest, src, nb);
+	printf("result = %s\n-----\n", dest);
+
+	return (0);
 }
 */

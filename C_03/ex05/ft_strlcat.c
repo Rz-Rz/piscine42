@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 17:17:29 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/17 20:37:56 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/19 14:11:42 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int	main(void)
     char    s8a[] = "ThanMyself";
     char    s7b[20] = "Shorter";
     char    s8b[] = "ThanMyself";
+
 		printf("%d\t%ld\n", ft_strlcat(s1a, s2a, 6), strlcat(s1b, s2b, 6));
 		printf("%d\t%ld\n", ft_strlcat(s3a, s4a, 10), strlcat(s3b, s4b, 10));
 		printf("%d\t%ld\n", ft_strlcat(s5a, s6a, 4), strlcat(s5b, s6b, 4));
