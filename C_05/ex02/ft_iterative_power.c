@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 20:51:37 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/16 20:51:38 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/21 16:16:27 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (nb);
 }
-
 /*
 #include <stdio.h>
 

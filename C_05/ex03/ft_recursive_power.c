@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 21:07:46 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/16 21:07:47 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/21 16:22:17 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	main(void)
 	printf("10:%d\n", ft_recursive_power(10, 1));
 	printf("100:%d\n", ft_recursive_power(10, 2));
 	printf("216:%d\n", ft_recursive_power(6, 3));
+	printf("1000:%d\n", ft_recursive_power(10, 3));
 }
 */
