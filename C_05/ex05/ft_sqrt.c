@@ -6,26 +6,30 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 21:33:44 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/21 17:25:53 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/21 18:50:30 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-    int	sqrt;
-    int temp;
+	int	n;
 
-	sqrt = nb / 2;
-    temp = 0;
-	while (sqrt != temp)
+	n = 1;
+	if (nb > 0)
 	{
-        temp = sqrt;
-        sqrt = (nb / temp + temp) / 2;
+		while (n * n <= nb)
+		{
+			if (n * n == nb)
+				return (n);
+			else if (n >= 46341)
+				return (0);
+			n++;
+		}
 	}
-	return (sqrt);
+	return (0);
 }
+/*
 #include <stdio.h>
-
 
 int	main(void)
 {
@@ -38,5 +42,5 @@ int	main(void)
 	printf("0:%d\n", ft_sqrt(-36));
 	printf("?:%d\n", ft_sqrt(4268968));
 	printf("?:%d\n", ft_sqrt(2147483647));
-
 }
+*/
