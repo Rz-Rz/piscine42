@@ -6,11 +6,12 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 19:02:12 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/21 19:02:15 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/22 17:30:54 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int ft_baselen(char *str);
 int ft_basewalk(char c, char *str);
@@ -35,6 +36,7 @@ char *ft_itoa(int nb, char* base)
 		}
 		i += ft_intlen(nb, bsize);
 		dest = malloc(sizeof(char) * i + 1);
+        dest[i] = '\0';
 		while (i)
 		{
 				dest[--i] = base[nb % bsize];
@@ -55,15 +57,16 @@ int ft_atoi_base(char *str, char *base)
 		neg = 0;
 		nb = 0;
 		size = ft_baselen(base);
+        printf("LAAAAAAAAA \n");
 		if (size < 2)
 				return (0);
-		while (*str >= '\t' && *str <= '\r' || *str == ' ')
+		while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 				str++;
 		while (*str == '-' || *str == '+')
 				if (*str++ == '-')
 						neg++;
 		while (ft_basewalk(*str, base) >= 0)
-				nb = nb * size + ft_basewalk(*str, base);
+				nb = nb * size + ft_basewalk(*str++, base);
 		if (neg % 2 != 0)
 				nb *= -1;
 		return (nb);
@@ -83,6 +86,10 @@ char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 
 int	main(void)
 {
-		printf("42:%s\n", ft_convert_base("--2a", "0123456789abcdef", "0123456789"));
-		printf("-2a:%s\n", ft_convert_base("-42", "0123456789", "0123456789abcdef"));
+    char *str = ft_convert_base("0", "0123456789abcdef", "0123456789");
+    char *str2 = ft_convert_base("-2147483648", "0123456789", "0123456789abcdef");
+		printf("42:%s\n", str);
+		printf("-2a:%s\n", str2);
+		free(str);
+		free(str2);
 }
