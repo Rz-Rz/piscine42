@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 18:02:23 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/20 18:33:12 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/23 18:14:54 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strdup(char *src)
 	int		i;
 	char	*scpy;
 
-	scpy = malloc(sizeof(char) * (ft_strlen(src)));
+	scpy = malloc(sizeof(char) * (ft_strlen(src)) + 1);
 	if (!scpy)
 		return (0);
 	i = 0;
@@ -45,8 +45,8 @@ char	*ft_strdup(char *src)
 
 int	main(void)
 {
-	printf("%s\n", strcmp(strdup("Test"),
-				ft_strdup("Test")) == 0 ? "OK" : "Fail");
+	printf("%s\n",// strcmp(strdup("Test"),
+				ft_strdup("Test"));// == 0 ? "OK" : "Fail");
 	printf("%s\n",
 			strcmp(strdup("r55er55"),
 				ft_strdup("r55er55")) == 0 ? "OK" : "Fail");

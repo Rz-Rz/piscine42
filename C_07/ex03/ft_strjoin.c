@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 11:29:34 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/21 15:58:39 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/23 18:16:01 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		j += ft_strlen(strs[i++]);
 	if (size > 0)
 		j += ((size - 1) * ft_strlen(sep));
-	dest = malloc(j + 1 * (sizeof(char)));
+	dest = malloc((j + 1) * (sizeof(char)));
 	if (!dest)
 		return (NULL);
 	i = 0;

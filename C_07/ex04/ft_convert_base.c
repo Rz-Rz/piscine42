@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 19:02:12 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/02/22 17:30:54 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/02/23 17:42:53 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	dest = ft_itoa(n, base_to, bsize);
 	return (dest);
 }
+
 /*
 #include <stdio.h>
-
 int	main(void)
 {
 	char	*str;
@@ -85,6 +85,8 @@ int	main(void)
 	char	*str2;
 	char	*str3;
 	char	*str5;
+	char	*str6;
+	char	*str7;
 
 			str = ft_convert_base("42", "0123456789abcdef", "0123456789");
 			str4 = ft_convert_base("-2147483648", "0123456789", "0123456789");
@@ -92,12 +94,18 @@ int	main(void)
 					"0123456789abcdef");
 			str3 = ft_convert_base("-2a", "0123456789abcdef", "0123456789");
 			str5 = ft_convert_base("-2147483648", "0123456789", "01");
+			str6 = ft_convert_base("0", "0123456789", "01");
+			str7 = ft_convert_base("", "0123456789", "01");
 			printf("66:%s\n", str);
+			printf("0:%s\n", str6);
+			printf(":%s\n", str7);
 			printf("-10000000000000000000000000000000:%s\n", str5);
 			printf("-2147483648:%s\n", str4);
 			printf("7fffffff:%s\n", str2);
 			printf("-42:%s\n", str3);
 			free(str);
+			free(str6);
+			free(str7);
 			free(str2);
 			free(str3);
 			free(str4);
